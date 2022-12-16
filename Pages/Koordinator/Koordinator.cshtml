@@ -1,0 +1,165 @@
+﻿@page
+@model Teacher.Pages.Koordinator.UnderviserModel
+@{
+}
+
+@*THIS IS THE LIST OF TEACHERS*@
+<br />
+<h2>List Of Teachers</h2>
+
+<a class="btn btn-primary btn-sm" href="/Koordinator/Create">New Teacher</a>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Teacher ID</th>
+            <th>Teacher First Name</th>
+            <th>Teacher Last Name</th>
+            <th>Teacher Initialer</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach(var teacher in Model.listTeachers)
+        {
+         <tr>
+            <th>@teacher.id</th>
+            <th>@teacher.FirstName</th>
+            <th>@teacher.LastName</th>
+            <th>@teacher.Initialer</th>
+
+            <td>
+                <a class="btn btn-primary btn-sm" href="/Koordinator/Underviser/Edit?)@teacher.id">Edit Teacher</a>
+                <a class="btn btn-primary btn-sm" href="/Koordinator/Underviser/Delete?)@teacher.id">Delete Teacher</a>
+            </td>
+        </tr>
+        }
+
+    </tbody>
+</table>
+
+<hr style="width: auto" , size="10" color="black">
+
+@*THIS IS THE LIST OF COURSES*@
+<br />
+<h2>List Of Courses</h2>
+
+<a class="btn btn-primary btn-sm" href="/Koordinator/CreateCourse">New Course</a>
+<a class="btn btn-primary btn-sm" href="/Koordinator/CreateSemester">New Semester</a>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Course ID</th>
+            <th>Course Name</th>
+            
+            <th>Teacher Initialer</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var courses in Model.listCourses)
+        {
+            <tr>
+                <th>@courses.id</th>
+                <th>@courses.CourseName</th>
+               
+                <th>@courses.CourseTeacher</th>
+
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Koordinator/Underviser/Edit?)@courses.id">Edit Course</a>
+                    <a class="btn btn-primary btn-sm" href="/Koordinator/Underviser/Delete?)@courses.id">Delete Course</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<hr style="width: auto" , size="10" color="black">
+
+@*LIST OF SEMESTRE*@
+
+<br />
+<h2>List Of Semestre</h2>
+
+<a class="btn btn-primary btn-sm" href="/Koordinator/Create">New Class</a>
+
+
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Semester ID</th>
+            <th>Course Name</th>
+            <th>Semester Nr</th>
+
+            
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var semesters in Model.listsemesters)
+        {
+            <tr>
+                <th>@semesters.id</th>
+                <th>@semesters.Name</th>
+
+                <th>@semesters.SemesterNr</th>
+
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Koordinator/Underviser/Edit?)@semesters.id">Edit Semester</a>
+                    <a class="btn btn-primary btn-sm" href="/Koordinator/Underviser/Delete?)@semesters.id">Delete Semester</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<hr style="width: auto" , size="10" color="black">
+
+@*LIST OF CLASSES*@
+
+<br />
+<h2>List Of Classes</h2>
+
+<table class="table">
+
+    <thead>
+        <tr>
+            <th>Class ID</th>
+            <th>Class Name</th>
+            
+            <th>Class Teacher</th>
+            <th>Class Semester</th>
+            <th>Class Course</th>
+        </tr>
+    </thead>
+
+    <tbody>
+        @foreach (var courses in Model.listCourses)
+        {
+            <tr>
+                <th>@courses.id</th>
+                <th>@courses.CourseName</th>
+                
+                <th>@courses.CourseTeacher</th>
+
+                <td>
+                    <a class="btn btn-primary btn-sm" href="/Koordinator/Underviser/Edit?)@courses.id">Edit Class</a>
+                    <a class="btn btn-primary btn-sm" href="/Koordinator/Underviser/Delete?)@courses.id">Delete Class</a>
+                        <a class="btn btn-primary btn-sm" href="/Koordinator/Underviser/Delete?)@courses.id">Add Book</a>
+                        <a class="btn btn-primary btn-sm" href="/Koordinator/Underviser/Delete?)@courses.id">Delete Book</a>
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>
+
+<hr style="width: auto" , size="10" color="black">
+

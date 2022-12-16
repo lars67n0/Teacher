@@ -1,0 +1,54 @@
+﻿@page
+@model Teacher.Pages.Koordinator.CreateSemesterModel
+@{
+}
+
+<h2>New Course</h2>
+@if (Model.errorMessage.Length > 0)
+{
+    <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <strong> @Model.errorMessage</strong>
+        <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+    </div>
+}
+
+<form method="POST">
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Course Name</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Semester Name" value="@Model.semesterInfo.Name" />
+        </div>
+
+    </div>
+
+    <div class="row mb-3">
+        <label class="col-sm-3 col-form-label">Course Teacher</label>
+        <div class="col-sm-6">
+            <input type="text" class="form-control" name="Semester Number" value="@Model.semesterInfo.Name" />
+        </div>
+
+    </div>
+
+
+
+
+    @if (Model.SuccesMessage.Length > 0)
+    {
+        <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <strong> @Model.SuccesMessage</strong>
+            <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="close"></button>
+        </div>
+    }
+
+    <div class=" row mb-3">
+        <div class=" offset-sm-3 col-sm-3 d-grid">
+            <button type="submit" class=" btn btn-primary">Submit</button>
+        </div>
+
+        <div class=" offset-sm-3 col-sm-3 d-grid">
+            <button class=" btn btn-outline-secondary" href="/" role="button">Cancel</button>
+        </div>
+
+
+    </div>
+</form>
